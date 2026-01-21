@@ -40,14 +40,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 /* Image */
 .about-img img {
   width: 100%;
   max-width: 480px;
-  height: auto;
+  height: 400px;
   object-fit: cover;
 }
 
@@ -115,7 +115,7 @@
   .about-content {
     flex-direction: row;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
   }
 
   .about-img img {
@@ -172,8 +172,8 @@
     gap: 6rem;
   }
 
-  .about-img img {
-    max-width: 380px;
+  .about-img  { 
+    max-width: 280px;
   }
 
   .about-text p {

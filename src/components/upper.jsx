@@ -29,7 +29,17 @@ function Upper() {
     });
   }, []);
 
-  /* ================= MAIN ANIMATION ================= */
+  /* ================= GYRO PERMISSION (iOS) ================= */
+  const requestGyroPermission = () => {
+    if (
+      typeof DeviceOrientationEvent !== "undefined" &&
+      typeof DeviceOrientationEvent.requestPermission === "function"
+    ) {
+      DeviceOrientationEvent.requestPermission().catch(() => {});
+    }
+  };
+
+  /* ================= MAIN ANIMATION + PARALLAX ================= */
   useGSAP(
     () => {
       if (!showContent) return;
@@ -64,22 +74,19 @@ function Upper() {
         ease: "power3.out",
       });
 
-      // soft shadow fade-up
       gsap.fromTo(
         ".bottom-shadow",
         { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 1.5,
-          delay: 0.6,
-          ease: "power2.out",
-        },
+        { opacity: 1, duration: 1.5, delay: 0.6 }
       );
 
-      /* ===== Parallax (desktop only) ===== */
-      if (window.innerWidth > 768) {
+      const isMobile = window.innerWidth <= 768;
+
+      /* ===== DESKTOP MOUSE PARALLAX ===== */
+      if (!isMobile) {
         const move = (e) => {
           const x = (e.clientX / window.innerWidth - 0.5) * 40;
+
           gsap.to(".sky", { x: x * 0.6, duration: 0.4 });
           gsap.to(".bg", { x: x, duration: 0.4 });
           gsap.to(".hero-text", { x: x * 0.3, duration: 0.4 });
@@ -88,12 +95,48 @@ function Upper() {
         window.addEventListener("mousemove", move);
         return () => window.removeEventListener("mousemove", move);
       }
+
+      /* ===== MOBILE GYROSCOPE PARALLAX ===== */
+      if (isMobile && window.DeviceOrientationEvent) {
+        const handleOrientation = (e) => {
+          const x = gsap.utils.clamp(-30, 30, e.gamma || 0);
+          const y = gsap.utils.clamp(-30, 30, e.beta || 0);
+
+          gsap.to(".sky", {
+            x: x * 0.3,
+            y: y * 0.2,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+
+          gsap.to(".bg", {
+            x: x * 0.6,
+            y: y * 0.4,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+
+          gsap.to(".hero-text", {
+            x: x * 0.2,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        };
+
+        window.addEventListener("deviceorientation", handleOrientation);
+        return () =>
+          window.removeEventListener("deviceorientation", handleOrientation);
+      }
     },
-    { dependencies: [showContent], scope: containerRef },
+    { dependencies: [showContent], scope: containerRef }
   );
 
   return (
-    <div ref={containerRef} className="min-h-[1vh] w-full overflow-x-hidden bg-black">
+    <div
+      ref={containerRef}
+      onClick={requestGyroPermission}
+      className="min-h-[1vh] w-full overflow-x-hidden bg-black"
+    >
       {/* ================= SVG INTRO ================= */}
       <div className="svg fixed inset-0 z-[100] flex items-center justify-center bg-black">
         <svg viewBox="0 0 800 600" className="w-full h-full">
@@ -140,6 +183,7 @@ function Upper() {
                 portfolio
               </h3>
             </nav>
+
             {/* BACKGROUNDS */}
             <img
               src="/sky.png"
@@ -148,9 +192,10 @@ function Upper() {
             />
             <img
               src="/bg.png"
-              className="bg absolute inset-0 w-full h-full object-cover scale-[1.4] sm:-center"
+              className="bg absolute inset-0 w-full h-full object-cover scale-[1.4]"
               alt=""
             />
+
             {/* TEXT */}
             <div className="hero-text absolute top-[10%] left-1/2 -translate-x-1/2 text-center text-white opacity-0 translate-y-10">
               <h1 className="text-[3rem] sm:text-[5rem] md:text-[6rem] leading-none">
@@ -163,19 +208,21 @@ function Upper() {
                 priyanshi
               </h1>
             </div>
+
             {/* CHARACTER */}
             <img
               src="/girlbg.png"
               className="character absolute left-1/6 -translate-x-1/2 -bottom-[60%] sm:-bottom-[35%] scale-[1.8] sm:scale-[2.4]"
               alt=""
             />
-            {/* ===== BOTTOM SHADOW ===== */}
+
+            {/* BOTTOM SHADOW */}
             <div className="bottom-shadow pointer-events-none absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-black via-black/70 to-transparent opacity-0"></div>
-            {/* SCROLL */}{" "}
+
+            {/* SCROLL */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white flex items-center gap-2 opacity-80">
-              {" "}
-              <i className="ri-arrow-down-line text-2xl"></i>{" "}
-              <span>Scroll Down</span>{" "}
+              <i className="ri-arrow-down-line text-2xl"></i>
+              <span>Scroll Down</span>
             </div>
           </section>
         </div>

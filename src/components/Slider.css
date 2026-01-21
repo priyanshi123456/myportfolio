@@ -1,0 +1,124 @@
+/* ================================
+   PROJECTS SLIDER SECTION
+================================ */
+.projects-slider {
+  position: relative; /* 🔥 shadow ke liye important */
+  width: 100%;
+  padding: 4rem 0;
+  background: #564747;
+  overflow: hidden;
+}
+
+/* ================================
+   TOP SHADOW GRADIENT
+================================ */
+.topsdw {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  opacity: 1;
+  z-index: 5;
+}
+
+/* ================================
+   HEADING
+================================ */
+.projects-slider h2 {
+  text-align: center;
+  font-size: clamp(3rem, 4vw, 4rem);
+  color: #dcbdbd;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 6;
+}
+
+/* ================================
+   SLIDER ROW
+================================ */
+.slider-row {
+  width: 100%;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+/* ================================
+   SLIDER TRACK (ANIMATION)
+================================ */
+.slider-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll linear infinite;
+}
+
+.slider-track.reverse {
+  animation-direction: reverse;
+}
+
+/* ================================
+   SLIDE ITEM
+================================ */
+.slide {
+  flex: 0 0 auto;
+  width: clamp(220px, 25vw, 420px);
+  margin-right: 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* ================================
+   INFINITE SCROLL ANIMATION
+================================ */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .projects-slider {
+    padding: 3rem 0;
+  }
+
+  .projects-slider h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .slider-row {
+    margin: 1rem 0;
+  }
+
+  .slide {
+    width: clamp(180px, 70vw, 260px);
+    margin-right: 1rem;
+  }
+}
