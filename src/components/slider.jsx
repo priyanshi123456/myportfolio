@@ -43,8 +43,8 @@ function SliderRow({ images, reverse = false, speed = 25 }) {
 const Slider = () => {
   return (
     <section className="projects-slider">
-        <div className="topsdw"></div>
-      <h2>Our Projects</h2>
+      <div className="topsdw"></div>
+      <h2>our projects</h2>
 
       {/* 3 Different Rows */}
       <SliderRow images={row1Images} speed={25} />

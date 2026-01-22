@@ -26,6 +26,17 @@
   transition: all 0.3s ease;
 }
 
+.heading {
+  text-align: center;
+  font-size: clamp(5rem, 4vw, 4rem);
+  color: #dcbdbd;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 6;
+}
+
+
 .tab-btn:hover {
   background: rgba(255, 255, 255, 0.2);
 }

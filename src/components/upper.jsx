@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import "remixicon/fonts/remixicon.css";
 
 function Upper() {
   const [showContent, setShowContent] = useState(false);
@@ -77,7 +76,7 @@ function Upper() {
       gsap.fromTo(
         ".bottom-shadow",
         { opacity: 0 },
-        { opacity: 1, duration: 1.5, delay: 0.6 }
+        { opacity: 1, duration: 1.5, delay: 0.6 },
       );
 
       const isMobile = window.innerWidth <= 768;
@@ -99,36 +98,38 @@ function Upper() {
       /* ===== MOBILE GYROSCOPE PARALLAX ===== */
       if (isMobile && window.DeviceOrientationEvent) {
         const handleOrientation = (e) => {
-          const x = gsap.utils.clamp(-30, 30, e.gamma || 0);
-          const y = gsap.utils.clamp(-30, 30, e.beta || 0);
+        
+          const x = gsap.utils.clamp(-45, 45, e.gamma || 0);
+          const y = gsap.utils.clamp(-45, 45, e.beta || 0);
 
           gsap.to(".sky", {
-            x: x * 0.3,
-            y: y * 0.2,
-            duration: 0.6,
+            x: x * 0.6, 
+            y: y * 0.5, 
+            duration: 0.5,
             ease: "power2.out",
           });
 
           gsap.to(".bg", {
-            x: x * 0.6,
-            y: y * 0.4,
-            duration: 0.6,
+            x: x * 1.2, 
+            y: y * 0.9, 
+            duration: 0.5,
             ease: "power2.out",
           });
 
           gsap.to(".hero-text", {
-            x: x * 0.2,
-            duration: 0.6,
+            x: x * 0.5, 
+            duration: 0.5,
             ease: "power2.out",
           });
         };
 
         window.addEventListener("deviceorientation", handleOrientation);
+
         return () =>
           window.removeEventListener("deviceorientation", handleOrientation);
       }
     },
-    { dependencies: [showContent], scope: containerRef }
+    { dependencies: [showContent], scope: containerRef },
   );
 
   return (

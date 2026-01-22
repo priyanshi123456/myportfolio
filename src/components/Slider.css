@@ -34,7 +34,7 @@
 ================================ */
 .projects-slider h2 {
   text-align: center;
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(6rem, 4vw, 4rem);
   color: #dcbdbd;
   margin-bottom: 3rem;
   letter-spacing: 2px;
@@ -110,7 +110,7 @@
 
   .projects-slider h2 {
     margin-bottom: 2rem;
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(4rem, 6vw, 3rem);
   }
 
   .slider-row {

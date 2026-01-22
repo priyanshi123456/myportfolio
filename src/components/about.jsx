@@ -67,6 +67,7 @@ function About() {
 
   return (
     <section ref={sectionRef} className="about">
+      <h2 className="heading">our team</h2>
       {/* Buttons */}
       <div className="about-buttons">
         {["Priyanshi", "Manav"].map((item) => (
@@ -97,7 +98,7 @@ function About() {
           <p>{content[active].text}</p>
 
           <button ref={btnRef} className="cv-btn">
-            Download CV
+            download cv
           </button>
         </div>
       </div>
