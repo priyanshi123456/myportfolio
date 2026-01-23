@@ -35,12 +35,15 @@ export default function VideoCarousel({ reviews }) {
   }, [current])
 
   return (
+    <div>
+        <h2 className="head">reviews</h2>
     <div className="carousel-wrapper">
        <div className="topsdw"></div>
       <div
         className="carousel-track"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
+        
         {reviews.map((item, i) => (
           <div className="carousel-slide" key={i}>
             <video
@@ -62,6 +65,7 @@ export default function VideoCarousel({ reviews }) {
 
       <button className="nav left" onClick={prev}>‹</button>
       <button className="nav right" onClick={next}>›</button>
+    </div>
     </div>
   )
 }

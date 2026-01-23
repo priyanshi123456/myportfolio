@@ -2,13 +2,15 @@
 
 @font-face {
   font-family: "pricedown";
-  src: url("public/pricedown.otf");
+  src: url("/pricedown.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "pricedown";
+  font-family: "pricedown", sans-serif;
   overflow-x: hidden;
 }

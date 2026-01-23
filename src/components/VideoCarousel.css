@@ -18,6 +18,15 @@
   z-index: 5;
 }
 
+.head {
+  padding: 0px;
+  text-align: center;
+  font-size: clamp(5rem, 4vw, 4rem);
+  color: #dcbdbd;
+  letter-spacing: 2px;
+  background-color: black;
+  z-index: 6;
+}
 .carousel-wrapper {
   height: 80vh;
   width: 100%;
