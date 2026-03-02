@@ -1,0 +1,178 @@
+/* ================= ROOT SECTION ================= */
+#menu {
+  position: relative;
+  width: 100%;
+  padding: clamp(3rem, 8vw, 6rem) 1.2rem;
+  background: radial-gradient(
+    circle at top,
+    #1a1a1a 0%,
+    #0d0d0d 45%,
+    #000000 100%
+  );
+  overflow: hidden;
+}
+
+/* ================= DECORATION IMAGES ================= */
+#m-left-leaf,
+#m-right-leaf {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+#m-left-leaf {
+  bottom: -6rem;
+  left: -4rem;
+  width: 30%;
+}
+
+#m-right-leaf {
+  top: -6rem;
+  right: -4rem;
+  width: 25%;
+}
+
+@media (max-width: 768px) {
+  #m-left-leaf,
+  #m-right-leaf {
+    display: none;
+  }
+}
+
+/* ================= HEADING ================= */
+#menu-heading {
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 2rem;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  position: relative;
+  z-index: 2;
+}
+
+#menu-heading span {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ================= TABS ================= */
+.cocktail-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  z-index: 2;
+}
+
+.cocktail-tabs button {
+  background: transparent;
+  border: none;
+  padding-bottom: 0.4rem;
+  font-size: clamp(0.9rem, 3vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cocktail-tabs button.active,
+.cocktail-tabs button:hover {
+  color: #facc15;
+  border-color: #facc15;
+}
+
+/* ================= CONTENT ================= */
+.content {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+/* ================= ARROWS ================= */
+.arrows {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.arrows button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.arrows img {
+  width: 16px;
+}
+
+.arrows span {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .arrows span {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+/* ================= RECIPE ================= */
+.recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  max-width: 750px;
+  margin: 0; /* ❌ removed left margin for mobile */
+}
+
+/* ================= INFO ================= */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info p:first-child {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: orange;
+  font-weight: bold;
+}
+
+/* ================= DETAILS ================= */
+.details {
+  max-width: 700px;
+}
+
+.details h2 {
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
+  margin-bottom: 0.8rem;
+}
+
+.details p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  line-height: 1.7;
+  color: rgba(200, 200, 200, 0.9);
+}

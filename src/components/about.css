@@ -1,193 +1,122 @@
 .about {
-  min-height: 60vh;
+  min-height: 100vh;
   background: black;
   color: white;
-  padding: 4rem 1.2rem;
+  padding: 6rem 8rem;
+  
 }
 
-/* ================= Buttons ================= */
-.about-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-bottom: 2.5rem;
-  justify-content: center;
-}
-
-.tab-btn {
-  padding: 0.7rem 1.4rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.heading {
+.main-heading {
   text-align: center;
-  font-size: clamp(5rem, 4vw, 4rem);
-  color: #dcbdbd;
-  margin-bottom: 3rem;
+  font-size: 4rem;
+  margin-bottom: 4rem;
   letter-spacing: 2px;
-  position: relative;
-  z-index: 6;
 }
 
-
-.tab-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.tab-btn.active {
-  background: #facc15;
-  color: black;
-}
-
-/* ================= Layout ================= */
+/* Layout */
 .about-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 6rem;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Image */
-.about-img img {
-  width: 100%;
-  max-width: 480px;
-  height: 400px;
+/* Video */
+.about-video {
+  width: 520px;
+  height: 600px;
   object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.08);
 }
 
-/* Text */
+/* RIGHT SIDE */
 .about-text {
-  text-align: center;
-  max-width: 480px;
+  max-width: 600px;
 }
 
-/* ================= Text ================= */
-.title {
-  font-size: clamp(2rem, 6vw, 3.2rem);
-  font-weight: 800;
-  line-height: 1;
-}
-
-.gradient-yellow {
-  background: linear-gradient(to right, #fdeba3, #fb923c, #ef4444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-white {
-  background: linear-gradient(to right, white, #c3cbda);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.about-text p {
-  margin-top: 1.2rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-/* ================= CV Button ================= */
-.cv-btn {
-  margin-top: 2rem;
-  padding: 0.9rem 1.8rem;
-  background: #facc15;
-  color: black;
-  font-size: 1rem;
+/* Big Creative Heading */
+.big-heading {
+  font-size: 3rem;
   font-weight: 700;
-  border-radius: 14px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.big-heading span {
+  display: block;
+  background: linear-gradient(90deg, #facc15, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+}
+
+/* Cards */
+.about-cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.info-card:hover {
+  background: rgba(250, 204, 21, 0.15);
+  transform: translateY(-8px);
+}
+
+.info-card h3 {
+  font-size: 1.4rem;
+  color: orange;
+  margin-bottom: 0.5rem;
+}
+
+/* Button */
+.about-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 40px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #facc15, #f97316);
+  color: black;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.cv-btn:hover {
-  background: #fde047;
-  transform: translateY(-2px);
+.about-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(250, 204, 21, 0.4);
 }
 
-/* ================= Tablet (>=768px) ================= */
-@media (min-width: 768px) {
+/* Responsive */
+@media (max-width: 1024px) {
   .about {
-    padding: 5rem 4rem;
-  }
-
-  .about-buttons {
-    justify-content: flex-start;
+    padding: 4rem 2rem;
   }
 
   .about-content {
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .about-img img {
-    max-width: 320px;
-  }
-
-  .about-text {
-    text-align: left;
-  }
-}
-/* ===== DESKTOP SIZE BOOST ===== */
-@media (min-width: 1024px) {
-  .about {
-    padding: 7rem 10rem;
-  }
-
-  .about-content {
-    max-width: 1400px;
-    gap: 8rem;
-  }
-
-  .about-img img {
-    max-width: 480px;
-  }
-
-  .title {
-    font-size: 4.5rem;
-    line-height: 0.95;
-  }
-
-  .about-text p {
-    font-size: 1.2rem;
-    max-width: 600px;
-  }
-
-  .cv-btn {
-    font-size: 1.2rem;
-    padding: 1.2rem 2.5rem;
-  }
-
-  .tab-btn {
-    font-size: 1.05rem;
-    padding: 0.9rem 1.8rem;
-  }
-}
-
-/* ================= Desktop (>=1024px) ================= */
-@media (min-width: 1024px) {
-  .about {
-    padding: 6rem 8rem;
-  }
-
-  .about-content {
-    gap: 6rem;
-  }
-
-  .about-img  { 
-    max-width: 280px;
-  }
-
-  .about-text p {
-    font-size: 1.05rem;
+  .about-cards {
+    flex-direction: column;
   }
 }

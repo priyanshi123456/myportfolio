@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  background: #0b0b0b;
+
+  color: white;
+}
+
+.testimonials-page {
+  padding: 40px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 50px;
+}
+
+.breadcrumb span {
+  color: #ff7a00;
+}
+
+/* Skills bar */
+.skills-bar {
+  margin: 30px 0;
+  background: #ff7a00;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  color: black;
+  font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+/* Section title */
+.section-title {
+  margin: 40px 0;
+  font-size: 28px;
+}
+
+.section-title span {
+  color: #ff7a00;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #ff7a00;
+  text-align: left;
+}
+
+.profile {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.profile h3 {
+  margin: 0;
+}
+
+.rating {
+  color: #ff7a00;
+  font-size: 14px;
+}
+
+.desc {
+  margin-top: 15px;
+  font-size: 14px;
+    font-family: Arial, sans-serif;
+  color: #ccc;
+}
+
+/* CTA */
+.cta {
+  margin-top: 80px;
+}
+
+.cta span {
+  color: #ff7a00;
+}
+
+.cta button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #ff7a00;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(255, 122, 0, 0.3);
+}
+.profile img {
+  border: 2px solid #ff7a00;
+  padding: 3px;
+  box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
+}
+.rating i {
+  color: #ff7a00;
+  margin-right: 3px;
+}
+.btn1{
+  background-color: #ff7a00;
+  color: aliceblue;
+  border-radius: 10px;
+}
+/* =====================
+   RESPONSIVE ONLY
+===================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 40px;
+  }
+
+  .skills-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .testimonials-page {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .skills-bar {
+    font-size: 14px;
+    padding: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .profile img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .profile h3 {
+    font-size: 16px;
+  }
+
+  .profile p {
+    font-size: 13px;
+  }
+
+  .btn1 {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-top: 6px;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  .cta h2 {
+    font-size: 22px;
+  }
+
+  .cta button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
