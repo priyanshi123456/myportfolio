@@ -134,6 +134,7 @@ function About() {
               gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
               gap: "16px",
               margin: "35px 0",
+                fontFamily: "'Poppins', sans-serif",
             }}
           >
             <div
@@ -142,12 +143,13 @@ function About() {
                 padding: "20px",
                 borderRadius: "16px",
                 textAlign: "center",
+                  fontFamily: "'Poppins', sans-serif",
               }}
             >
-              <h3 style={{ fontSize: "1.3rem", marginBottom: "6px" }}>
+              <h3 style={{ fontSize: "1.3rem", marginBottom: "6px",  fontFamily: "'Poppins', sans-serif", }}>
                 1+ Year
               </h3>
-              <p style={{ fontSize: "0.9rem", opacity: 0.85 }}>
+              <p style={{ fontSize: "0.9rem", opacity: 0.85,  fontFamily: "'Poppins', sans-serif", }}>
                 Industry Experience
               </p>
             </div>
@@ -187,11 +189,12 @@ function About() {
 
           {/* Instagram Button */}
           <a
-            href="https://www.instagram.com/digitalwithpriyanshi"
+            href="https://www.instagram.com/digitalwithpriyanshi_"
             target="_blank"
             rel="noopener noreferrer"
             style={{
               display: "inline-flex",
+                fontFamily: "'Poppins', sans-serif",
               alignItems: "center",
               gap: "10px",
               padding: "12px 24px",
@@ -216,7 +219,7 @@ function About() {
                 "0 6px 18px rgba(255,94,0,0.4)";
             }}
           >
-            <i className="fa-brands fa-instagram" style={{ fontSize: "18px" }} />
+            <i className="fa-brands fa-instagram" style={{ fontSize: "18px" ,  fontFamily: "'Poppins', sans-serif",}} />
             Follow on Instagram
           </a>
         </div>

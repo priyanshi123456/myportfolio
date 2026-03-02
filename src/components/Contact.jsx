@@ -27,8 +27,20 @@ Message: ${message}`;
   };
 
   return (
+    <>
+       <h2
+        style={{
+          textAlign: "center",
+          fontSize: "clamp(2rem, 4vw, 3rem)",
+          // marginBottom: "50px",
+        }}
+      >
+        Contact us
+      </h2>
     <section className="contact-section">
+      
       <div className="contact-container">
+        
 
         {/* LEFT SIDE */}
         <div className="contact-info">
@@ -98,6 +110,7 @@ Message: ${message}`;
 
       </div>
     </section>
+    </>
   );
 }
 
