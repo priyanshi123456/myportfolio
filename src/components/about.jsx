@@ -43,6 +43,7 @@ function About() {
         width: "100%",
         minHeight: "100vh",
         padding: "clamp(40px, 8vw, 80px)",
+        
         background: "#000",
         color: "#fff",
       }}
@@ -113,8 +114,10 @@ function About() {
           <p
             style={{
               fontSize: "clamp(0.95rem, 2.5vw, 1.05rem)",
-              lineHeight: "1.8",
+              lineHeight: "1.8"
+              ,
               opacity: 0.9,
+                fontFamily: "'Poppins', sans-serif",
             }}
           >
             I started my coding journey in Pune and worked as a Senior Full Stack
